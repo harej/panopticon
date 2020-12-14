@@ -46,7 +46,7 @@ def _get_external_link_count(dbname):
         namespace = 6  # File namespace, the de-facto "main" NS of Commons
     q = ('select count(*) from externallinks join page on page_id = el_from '
         'where page_namespace = {0};').format(str(namespace))
-    result = _run_query(dbname, q)
+    result = _run_query(dbname, q)['count(*)']
     return int(result)
 
 
