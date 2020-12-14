@@ -116,7 +116,7 @@ def get_title_and_namespace(page_title_with_ns):
 if __name__ == '__main__':
     all_wikis = get_all_wikis()
     page_input = sys.argv[1]
-    if page_input == '!externallinks':
+    if page_input == 'getexternallinks':
         all_el_counts = get_all_external_link_counts(all_wikis)
         for resultpair in all_el_counts:
             print('{0}: {1}'.format(resultpair[0], str(resultpair[1])))
