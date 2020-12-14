@@ -44,8 +44,8 @@ def _get_external_link_count(dbname):
     namespace = 0
     if dbname == 'commonswiki':
         namespace = 6  # File namespace, the de-facto "main" NS of Commons
-    q = 'select count(*) from external_links join page on page_id = el_from '
-        'where page_namespace = {0};'.format(str(namespace))
+    q = ('select count(*) from external_links join page on page_id = el_from '
+        'where page_namespace = {0};').format(str(namespace))
     result = _run_query(dbname, q)
     return int(result)
 
